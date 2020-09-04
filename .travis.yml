@@ -16,7 +16,7 @@ before_install:
 
 script:
 
-  - cd pipelines/backend
-  - docker build -t ${IMAGE_NAME} -f Dockerfile.scheduledworkflow .
+  - cd pipelines
+  - docker build -t ${IMAGE_NAME} -f backend/Dockerfile.scheduledworkflow .
   - docker login -u ${DOCKER_USER} -p ${DOCKER_PWD}
   - docker push ${IMAGE_NAME}
